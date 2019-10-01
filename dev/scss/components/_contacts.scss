@@ -1,0 +1,140 @@
+.contacts__block  {
+    .messangers__icons {
+        .messengers {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 3rem;
+
+            .facebook, .whatsUp, .telegram {
+                height: 40px;
+                width: 40px;
+                margin: 2rem 1rem;
+                cursor: pointer;
+            }
+            .facebook {
+                background: url('/content/images/contacts/facebook.png');
+                @include bg(cover, center);
+            }
+            .whatsUp {
+                background: url('/content/images/contacts/whatsUp.png');
+            }
+            .telegram {
+                background: url('/content/images/contacts/telegram.png');
+            }
+        }
+    }
+    .copyright {
+        justify-content: center;
+        display: flex;
+        text-align: center;
+        margin-bottom: 5rem;
+
+        .heading {
+            padding-top: 3rem;
+            font-size: 12px;
+            line-height: 150%;
+            max-width: 186px;
+            border-top: 1px solid #C6D5E6;
+            color: $blue_font;
+            font-weight: normal;
+        }
+    }
+
+    .messangers__heading {
+        text-align: center;
+
+        .heading {
+            font-weight: 600;
+            color: #042F61;
+            font-size: 26px;
+            line-height: 150%;
+        }
+    }
+
+    .row {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        .map__wrapper {
+            padding: 2rem 15px 1rem 15px!important;
+            width: 100%;
+        }
+        .block__column {
+            margin: 1.625rem;
+            margin-top: 2.5rem;
+            padding: 0;
+            flex: 0 0 45%;
+            background: #FFFFFF;
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+            max-width: 484.5px;           
+            width: 97%;
+            border-radius: 10px;
+
+            @media screen and(max-width: 700px){
+                margin: 1rem 0;
+            }
+
+            .block__column--item {
+                display: flex;
+                padding: 2.5rem;
+                font-size: 15px;
+                line-height: 150%;
+                color: #042F61;
+                border-bottom: 1px solid #C6D5E6;
+
+                &:not(:nth-child(2)) {
+                    align-items: center;
+                }
+                &:nth-child(4) {
+                    border-bottom: none;
+                    padding-bottom: 0;
+                }
+                .heading {
+                    font-weight: 600;
+                    color: #042F61;
+                    font-size: 26px;
+                    line-height: 150%;
+                }
+                .icon__location {
+                    background: url('/content/images/contacts/location.png');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    height: 30px;
+                    width: 30px;
+                }
+                .text {
+                    padding-left: 1rem;
+                    font-weight: normal;
+                }
+
+                .icon__telephone {
+                    background: url('/content/images/contacts/phone.png');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    height: 30px;
+                    width: 30px;
+                   
+                }
+                .telephone {
+                    font-size: 23px;
+                    line-height: 150%;
+                    padding-left: .5rem;
+                    font-weight: normal;
+                }
+
+                .icon__mail {
+                    background: url('/content/images/contacts/mail.png');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    height: 30px;
+                    width: 30px;
+                }
+                .mail {
+                    padding-left: .5rem;
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+}

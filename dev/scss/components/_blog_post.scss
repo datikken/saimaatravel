@@ -1,0 +1,105 @@
+.content__wrapper {
+    width: 100%;
+
+    &--item {
+        position: relative;
+        padding: 0 1rem 0 1rem;
+
+        .post__image {
+           width: 100%;
+           border-radius: 10px;
+           @include padding-hack(100%);
+        }
+
+        .floating {
+            position: absolute;
+            top: 0;
+            right: 10px;
+            margin-top: 0;
+            width: 163px;
+            font-size: 10px;
+            line-height: 170%;
+            display: none;
+            @include breakpoint(1025px) {
+                display: block;
+            }
+        }
+        &__text {
+            font-size: 13px;
+            line-height: 150%;
+            color: #042F61;
+            margin-top: 1.875rem;
+            text-align: justify;
+            font-weight: normal;
+            
+            @include breakpoint($medium) {
+                text-align: initial;
+                max-width: 638px;
+            }
+            span {
+                display: flex;
+                @include breakpoint($medium) {
+                    display: block;
+                }
+            }
+            .quote {
+                margin: 3.125rem 0;
+                display: inline-block;
+                font-size: 16px;
+                line-height: 170%;
+                position: relative;
+                max-width: 500px;
+                margin-left: 3.8rem;
+                width: 85%;
+                text-align: left;
+
+                @include breakpoint($medium) {
+                    margin-left: 6.8rem;
+                    width: 100%;
+                }
+                &:before {
+                    background-image: url('/content/images/blog/post/stick.png');
+                    content: '';
+                    height: 2px;
+                    width: 100px;
+                    position: absolute;
+                    transform: rotate(90deg);
+                    top: 50%;
+                    left: -7.1rem;
+                }
+            }
+        }
+        &__heading {
+            margin-top: 1.6rem;
+            margin-bottom: 2.6rem;
+            text-align: left;
+            font-size: 30px;
+            line-height: 120%;
+            font-weight: 500;
+            color: #042F61;
+        }
+        &__description {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.25rem;
+            &--item {
+                color: #042F61;
+                font-weight: normal;
+
+                span strong {
+                    font-weight: 600;
+                }
+            }
+
+            &--counter {
+                font-weight: bold;
+                font-size: 11px;
+                line-height: 150%;
+                color: #42A0B9;
+                @include breakpoint($medium) {
+                    padding-right: 8rem;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,173 @@
+/* Carousel */
+.owl-carousel {
+  position: relative;
+  max-width: 1069px;
+  margin: 0 auto;
+}
+.owl-carousel .carousel-item {
+  background: #fff;
+  border: 1px solid #D9D7DA;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.owl-carousel .carousel-item-text {
+  padding: 12px;
+}
+
+.owl-carousel .carousel-item .item-kicker {
+  color: #9A5053;
+  display: block;
+  font-size: .8em;
+  font-weight: 600;
+  height: 30px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.owl-carousel .carousel-item .item-title {
+  color: #646464;
+  font-size: 1em;
+  font-weight: 600;
+  height: 38px;
+  margin: 0;
+}
+
+.owl-dots {
+  margin-top: 40px;
+  text-align: center;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.owl-dot {
+  border-radius: 50px;
+  height: 10px;
+  width: 10px;
+  display: inline-block;
+  background: rgba(127, 127, 127, 0.5);
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.owl-dot.active {
+  background: rgba(127, 127, 127, 1);
+}
+
+.carousel-item {
+  .card {
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    z-index: 999;
+
+    .card-body {
+      padding: 1.5rem;
+
+      .card-decor {
+        img {
+          position: absolute;
+          z-index: 0;
+          width: 70px;
+          left: 1.5rem;
+          top: 3rem;
+        }
+      }
+      .card-text {
+        position: relative;
+        z-index: 1;
+        padding: 2rem;
+        line-height: 160%;
+        text-align: left;
+      }
+      .card-text--content {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+
+          .card-text__avatar{
+            padding-top: .5rem;
+
+            img {
+              border-radius: 20rem;
+              position: relative;
+              z-index: 4;
+            }
+          }
+          .card-text__heading {
+            margin-left: 2rem;
+            display: flex;
+            flex-direction: column;
+            span:first-child {
+              font-weight: 600;
+              color: #042F61;
+            }
+          }
+        }
+    }
+  }
+}
+
+.owl-nav {
+  .owl-prev, .owl-next {
+    position: absolute;
+    width:32px;
+    height: 75px;
+    top: 40%;
+    outline: none;
+    display: inline-block;
+    @include breakpoint($medium) {
+      top: 46%;
+    }
+    span {
+      display: none;
+    }
+  }
+  .owl-prev {
+    background-image: url('/content/images/feedback/Arrow.png')!important;
+    background-repeat: no-repeat!important;
+    left: 1rem;
+    @include breakpoint(1244px) {
+      left: -4.5rem;
+    }
+  }
+  .owl-next {
+    background-image: url('/content/images/feedback/Arrow2.png')!important;
+    background-repeat: no-repeat!important;
+    right: 1rem;
+    @include breakpoint(1244px) {
+      right: -4.5rem;
+    }
+  }
+}
+.feedback-block {
+  background-image: url('/content/images/feedback/Vector.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  content: '';
+  display: block;
+  width: 100vw;
+  z-index: 0;
+  height: 530px;
+  @include breakpoint(700px) {
+    height: 582px;
+  }
+  @include breakpoint(1224px) {
+    height: 550px;
+  }
+}
+.feedback-block__heading {
+  padding-top: 4.5rem;
+  padding-bottom: 1.5rem;
+  text-align: center;
+  position: relative;
+  z-index: 3;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 120%;
+  text-align: center;
+  color: $blue;
+}

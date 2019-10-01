@@ -1,0 +1,7 @@
+/node_modules/
+/.idea/
+/nbproject/
+/tmp/
+/templates_c
+/cache
+/libs

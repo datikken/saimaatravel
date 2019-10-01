@@ -1,0 +1,207 @@
+.organisations__block {
+    &--item {
+        &__heading {
+            text-align: center;
+            width: 100vw;
+            font-size: 2rem;
+            color: #042F61;
+            margin: 4.375rem 0;
+            margin-bottom:3.2rem;
+            font-weight: 600;
+        }
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        &:nth-child(2) {
+            margin-bottom: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        &:not(:last-child) {
+            padding: 0 1rem;
+        }
+
+        &:last-child {
+            margin-bottom: 4.81rem;
+            padding: 0 2rem;
+        }
+
+        &__text {
+            text-align: justify;
+            max-width: 844px;
+            font-size: 15px;
+            line-height: 170%;
+            color: #042F61;
+            font-weight: 500;
+        }
+     
+        .one, .two, .three, .four, .five, .six {
+            position: relative;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 2rem;
+            filter: drop-shadow(0 10px 10px #00000099);
+            transition: filter .2s;
+            
+            @include breakpoint($medium) {
+                filter: none;
+                &:hover {
+                    filter: drop-shadow(0 10px 10px #00000099);
+                }
+            }
+            .content {
+                width: 100%;
+                clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+                @include padding-hack(100%);
+                @include bg(cover, center);
+            }
+
+            @include breakpoint(700px) {
+                max-width: 300px;
+                margin: 0 1rem 2rem 1rem;
+            }
+            
+            .description {
+                position: absolute;
+                top: 45%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                color: #fff;
+                width: 200px;
+                cursor: pointer;
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 120%;
+
+                .more {
+                    font-size: 12px;
+                    position: absolute;
+                    left: 50%;
+                    transform: translate(-50%);
+                    border-top: 1px solid;
+                    bottom: -5rem;
+
+                    img {
+                        width: 22px;
+                    }
+                }
+            }
+            .mask {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                border-radius: 2rem;
+                background: linear-gradient(266.42deg, #93395C 0%, #042F61 100%);
+                opacity: .8;
+                bottom: 0;
+                transition: opacity .2s;
+                @include breakpoint(1025px) {
+                    opacity: 0;
+                }
+            }
+
+            @include breakpoint($medium) {
+                &:hover {
+                    .mask {
+                        opacity: .8;
+                    }
+                }
+            }
+        }
+        .one {
+            .content {
+                background-image: url('../../content/images/organisations/1.png');
+            }
+            .description {
+                .more {
+                    bottom: -4rem;
+                }
+            }
+        }
+        .two {
+            .content {
+                background-image: url('../../content/images/organisations/2.png');
+            }            .description {
+                .more {
+                    bottom: -5rem;
+                }
+            }
+        }
+        .three {
+            .content {
+                background-image: url('../../content/images/organisations/3.png');
+            }            .description {
+                .more {
+                    bottom: -4rem;
+                }
+            }
+        }
+        .four {
+            .content {
+                background-image: url('../../content/images/organisations/4.png');
+            }        }
+        .five {
+            .content {
+                background-image: url('../../content/images/organisations/5.png');
+            }            .description {
+                .more {
+                    bottom: -3rem;
+                }
+            }
+        }
+        .six {
+            .content {
+                background-image: url('../../content/images/organisations/6.png');
+            }        
+        }
+    }
+    .mice {
+        .one, .two, .three {
+            .mask {
+                background: linear-gradient(87.17deg, #042F61 0%, #42A0B9 100%);
+            }
+        }
+        .one {
+            .content {
+                background-image: url('../../content/images/organisations_mice/1.png');
+            }
+        }
+        .two {
+            .content {
+                background-image: url('../../content/images/organisations_mice/2.png');
+            }        
+        }
+        .three {
+            .content {
+                background-image: url('../../content/images/organisations_mice/3.png');
+            }        
+        }
+    }    
+    .personal {
+        .hero__image--cta__wrapper {
+            &--item {
+                .tourism__heading {
+                    font-size: 34px;
+                }
+            }
+        }
+        .one {
+            .content {
+                background-image: url('../../content/images/personal/1.png');
+            }
+        }
+        .two {
+            .content {
+                background-image: url('../../content/images/personal/2.png');
+            }
+            .description {
+                .more {
+                    bottom: -3rem;
+                }
+            }
+        }
+    }
+}

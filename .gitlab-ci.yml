@@ -1,0 +1,30 @@
+cache:
+  paths:
+   - node_modules/
+
+stages:
+  - develop
+
+before_script:
+  - mv -f .gitignore-production  .gitignore
+  - npm install
+  - node_modules/gulp/bin/gulp.js --gulpfile ./gulpfile.js production
+  - git status
+  - git add :/
+  - git commit --author="Gitlab <>" -m "Deploy project"
+  
+saimaatravel.vioproject.com:
+  stage: develop
+  script:
+    - sshpass -p $dev_password ssh -o StrictHostKeyChecking=no $dev_user@$dev_server sudo chown -R www-data:www-data $dev_folder
+    - sshpass -p $dev_password ssh -o StrictHostKeyChecking=no $dev_user@$dev_server sudo sudo chmod -R 0777 $dev_folder
+    - git-ftp  push  -u $dev_user -p $dev_password sftp://$dev_server:22$dev_folder
+    - sshpass -p $dev_password ssh -o StrictHostKeyChecking=no $dev_user@$dev_server sudo chown -R www-data:www-data $dev_folder
+    - sshpass -p $dev_password ssh -o StrictHostKeyChecking=no $dev_user@$dev_server sudo sudo chmod -R 0777 $dev_folder
+  when: manual
+  except:
+  - master
+  allow_failure: false
+  environment:
+    name: dev
+    url: http://saimaatravel.vioproject.com

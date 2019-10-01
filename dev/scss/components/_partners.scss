@@ -1,0 +1,54 @@
+.partners__block {
+    background: $bg;
+    &--item {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+
+        @include breakpoint(700px) {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        @include breakpoint(1200px) {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        &__heading, &__button {
+            text-align: center;
+            font-size: 2rem;
+            color: $blue;
+            font-weight: 600;
+            margin: 4.37rem;
+            margin-bottom: 5.8rem;
+
+            @include breakpoint($medium) {
+                margin: 4.37rem;
+                margin-bottom: 3.8rem;
+            }
+        }
+
+        .one, .two, .three, .four {
+            height: 90px;
+            @include bg(contain, center);
+            position: relative;
+            min-width: 250px;
+            margin: 1rem 1rem 6.6rem 1rem;
+         }
+        .one {
+            background-image: url('../../content/images/partners/WWF-logo.png');
+        }
+        .two {
+            background-image: url('../../content/images/partners/Vector.png');
+        }
+        .three {
+            background-image: url('../../content/images/partners/image.png');
+        }
+        .four {
+            background-image: url('../../content/images/partners/fortum.png');
+            height: 47px;
+        }
+    }
+}

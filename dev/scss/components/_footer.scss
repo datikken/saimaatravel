@@ -1,0 +1,140 @@
+.footer__block {
+    background: linear-gradient(255.15deg, #93395C 0%, #042F61 100%);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 355px;
+    padding-top: 2rem;
+    padding: 1.5rem;
+
+    @include breakpoint($medium) {
+        padding: 4.375rem 1rem 1rem 1rem;
+    }
+
+    .container-fluid {
+        display: flex;
+        flex-wrap: wrap;
+        width: 91%!important;   
+        padding: 0;
+
+        @include breakpoint($medium) {
+            left: 50%;
+            width: 99%!important;   
+        }
+        position: absolute;
+    }
+
+    @include breakpoint($tablet) {
+        display: inherit;
+        height: 290px;
+        justify-content: initial;
+    }
+
+    .footer__block--item__left {
+        display: flex;
+        flex-wrap: wrap;
+        width: 50%;
+
+        @include breakpoint($tablet) {
+            width: auto;
+            float: left;
+            width: 18%;        
+            margin-left: 6.25rem;
+        }
+
+        .footer__block--item__left--inner {
+            img {
+                padding: 0 1rem 1rem 3rem;
+            }
+            .footer__links {
+                ul {
+                    list-style: none;
+                    color: #fff;
+                    li {
+                        margin: 0 1rem 1rem 0;
+                        cursor: pointer;
+                        a {
+                            color: #fff;
+                            @include breakpoint($medium) {
+                                @include linkUnderline();
+                                font-weight: 500;
+                            }
+
+                            &:after {
+                                margin-top: .5rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .footer__block--item__right {
+        width: 50%;
+        max-width: 176px;
+        padding-bottom: 6.25rem;
+        margin-left: auto;
+
+        @include breakpoint($tablet) {
+            margin-left: auto;
+            width: 25%;
+            float: right;
+        }
+      
+        .telephone {
+            margin-bottom: 1rem;
+            text-decoration: none;
+            font-weight: 500;
+            span {
+                color: #fff!important;
+
+                a {
+                    text-decoration: none;
+                    color: #fff!important;
+                }
+            }
+        }
+        .adress {
+            color: #fff;
+            margin-bottom: 2rem;
+        }
+        .social_media {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            align-items: center;
+            max-width: 150px;
+            a {
+                &:first-child {
+                    margin-left:0;
+                }
+                margin: 0 .5rem;
+            }
+        }
+    }
+}
+
+.footer__copyright {
+    display: flex;
+    background: #042F61;
+    padding: 1rem;
+    justify-content: space-between;
+    width: 100%;
+    color: #fff;
+    font-size: 10px;
+    @include breakpoint($medium) {
+        padding: 1rem 5rem;
+    }
+    span:not(:first-child) {
+        text-align: right;
+    }
+}
+.footer__block--item__logo {
+    display: inline-block;
+    margin-bottom: 2rem;
+    width: 80%;
+
+    @include breakpoint($tablet) {
+        width: auto;
+        float: left;
+    }
+}

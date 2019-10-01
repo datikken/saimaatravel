@@ -1,0 +1,115 @@
+.services__block {
+    .col-md-12 {
+        justify-content: center!important;
+    }
+    .container-fluid {
+        left: 50%;
+        transform: translate(0);
+        padding: 0 2rem;
+    }
+    &--item {
+        background: $bg;
+        display: flex;
+        justify-content: space-between!important;
+        flex-wrap: wrap;
+  
+        &__heading {
+            text-align: center;
+            width: 100vw;
+            font-size: 26px;
+            font-weight: 600;
+            color: #042F61;
+            margin:3.74rem 0;
+        }
+        &__button {
+            // padding-top: 3rem;
+            // padding-bottom: 4.5rem;
+            font-weight: 600;
+
+            @include breakpoint($medium) {
+                padding: 0;
+            }
+            
+            .button {
+                @include cta();
+                padding: 1.1rem;
+                width: auto;
+            }
+        }
+        .left, .center, .right {
+            @include bg(cover, center);
+            width: 100%;
+            border-radius: 2rem;
+            position: relative;
+            @include padding-hack(100%);
+            margin-bottom: 2rem;
+            overflow: hidden;
+            cursor: pointer;
+
+            @include breakpoint($tablet) {
+                max-width: 32%;
+                margin-bottom: 0;
+            }
+
+            .mask {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border-radius: 2rem;
+                background: linear-gradient(180deg, rgba(4, 47, 97, 0) 0%, #042F61 100%);
+                transition: bottom .2s;
+                bottom: 0;
+                @include breakpoint($medium) {
+                    bottom: -100%;
+                }
+            }
+            &:hover {
+                .mask {
+                    bottom: 0;
+                }
+            }
+      
+            .description {
+                position: absolute;
+                bottom: 3.75rem;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 20px;
+                font-weight: 600;
+                width: 80%;
+                color: #fff; 
+                text-align: center;
+                word-break: keep-all;
+
+                @include breakpoint($mobile) {
+                    font-size: 26px;
+                }
+                @include breakpoint(768px) {
+                    font-size: 20px;
+                }
+                @include breakpoint(1200px) {
+                    font-size: 26px;
+                }
+            }
+        }
+        .left {
+            background-image: url('../../content/images/textBlock/left.png');
+        }
+        .center {
+            background-image: url('../../content/images/textBlock/center.png');
+        }
+        .right {
+            background-image: url('../../content/images/textBlock/right.png');
+            .description {
+                bottom: 1.8rem;
+
+                @include breakpoint(765px) {
+                    bottom: 11px;
+                }
+                @include breakpoint(1207px) {
+                    bottom: 0;
+                }
+            }
+        }
+    }
+}

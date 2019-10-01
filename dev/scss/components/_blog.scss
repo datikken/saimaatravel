@@ -1,0 +1,214 @@
+.blog__content {
+    display: flex;
+    justify-content: center;
+    max-width: 1340px;
+    margin: 0 auto;
+    
+    @include breakpoint(1000px) {
+        max-width: 900px;
+        padding: 10px;
+    }
+    @include breakpoint(1025px) {
+        max-width: 1340px;
+    }
+
+    .blog__content--wrapper {
+        @media screen and(max-width: 900px) {
+            display: flex;
+            flex-wrap: wrap;
+            .filters {
+                .filters__heading {
+                    padding-left: 1rem;
+                }
+                .filters__wrap {
+                    width: 100%!important;
+                    padding-left: .8rem;
+                }
+            }
+        }
+
+        display: grid;
+        grid-template-columns: 20% 80%;
+        max-width: 1440px;
+
+        @include breakpoint(1000px) {
+            grid-template-columns: 20% 83%;
+        }
+        @include breakpoint(1025px) {
+            grid-template-columns: 20% 80%;
+        }
+    
+        .filters__heading {
+            font-size: 16px;
+            line-height: 120%;
+            display: flex;
+            align-items: center;
+            color: #042F61;
+            width: 200px;
+            margin: 2rem 0;
+            font-weight: 600;
+        }
+        .content {
+            width: 100%;
+
+            .card-columns {
+                column-count: 1;
+
+                @include breakpoint(700px) {
+                    column-count: 2;
+                    margin: 1rem;
+                    padding-top: 1.125rem;
+                }
+                @include breakpoint(1000px) {
+                    column-count: 2;
+                    margin: 1.25rem 2rem 0 2rem;
+                }
+                @include breakpoint(1200px) {
+                    column-count: 3;
+                    margin: 1.25rem 0 0 0;
+                }
+                column-gap:  2rem;
+                margin: 2rem 0;
+            }
+       
+            .card {
+                box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                margin-bottom: 2rem;
+                min-width: 30px;
+                margin: 0 1rem 2rem 1rem; 
+                break-inside: avoid;
+                font-weight: normal;
+
+                @include breakpoint(700px) {
+                    margin: 0 0 2rem 0;
+                }
+
+                .card-img-top {
+                    position: relative;
+                    overflow: hidden;
+                    cursor: pointer;
+
+                    img {
+                        width: 100%;
+                        max-height: 250px!important;
+                        border-radius: 10px 10px 0px 0px;
+                    }
+                    @include breakpoint($medium) {
+                        &:hover:before, &:hover:after {   
+                            opacity: 1;
+                        }
+                    }
+                    &:after {
+                        content: '';
+                        background: url('/content/images/blog/zoom_in.png');
+                        border-radius: 10px 10px 10px 10px;
+                        display: block;
+                        width: 100%;
+                        bottom: 0%;
+                        height: 100%;
+                        position: absolute;
+                        transition: opacity .2s;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        z-index: 99;
+                        opacity: .8;
+                        @include breakpoint($medium) {
+                            opacity: 0;
+                        }
+                    }
+                    &:before {
+                        content: '';
+                        background: linear-gradient(0deg, rgba(66, 160, 185, 0.7), rgba(66, 160, 185, 0.7));
+                        border-radius: 10px 10px 0px 0px;
+                        display: block;
+                        width: 100%;
+                        bottom: 0%;
+                        height: 100%;
+                        position: absolute;
+                        transition: opacity .2s;
+                        z-index: 2;
+                        opacity: .8;
+                        @include breakpoint($medium) {
+                            opacity: 0;
+                        }
+                    }
+                }
+
+                .card-body {
+                    padding: 2rem;
+                    margin-bottom: 1rem;
+                    .filters {
+                        margin-bottom: 20px!important;
+                    }
+                    .card-text {
+                        margin-bottom: 35px;
+                        line-height: 150%;
+                        span {
+                            strong {
+                                color: $blue;
+                            }
+                        }
+                        span:not(:first-child) {
+                            display: block;
+                            padding-top: .12rem;
+                        }
+                    }
+                    .card__info {
+                        a {
+                            text-decoration: none;
+                            color: #42A0B9;
+                            img {
+                                margin-right: 10px;
+                            }
+                        }
+                        color: #FC4159;
+                    }
+                    .card-title {
+                        font-weight: 600;
+                        font-size: 20px;
+                        line-height: 120%;
+                        color: #042F61;
+                        margin: .5rem 0 20px 0;
+                    }
+                    .card__info {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        .comments__info {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            span {
+                                margin-left: .3rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .filters {
+            flex: 20%;
+            margin-left: .2rem;
+
+            .filters__wrap{
+                display: flex;
+                flex-wrap: wrap;
+                width: 170px;
+            }            
+
+            .filters__item {
+                margin: .5rem .5rem .5rem 0;
+                font-weight: normal;
+
+                span {
+                    background: linear-gradient(21.19deg, #F1F7FF -0.06%, #D8F6FF 100.08%);
+                    padding: .5rem;
+                    border-radius: 1rem;
+                    font-size: 12px;
+                    color: #042F61;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,89 @@
+@import './utils/mixins';
+@import './utils//variables';
+
+@import './components/navbar.scss';
+@import './components/hero.scss';
+@import './components/services.scss';
+@import './components/features.scss';
+@import './components/partners.scss'; 
+@import './components/steps.scss';
+@import './components/feedback.scss';
+@import './components/footer.scss'; 
+@import './components/organisations.scss'; 
+@import './components/contacts.scss'; 
+@import './components/blog.scss';
+@import './components/blog_post.scss';
+@import './components/hamburger.scss';
+
+@import './vendors/feedback.scss';
+@import './vendors/owl.carousel';
+@import './vendors/magnific';
+
+html {
+    font-size: 14px;
+    font-weight: normal;
+    padding: 0;
+    margin: 0 !important;
+    
+    & * {  
+      padding: 0; 
+      margin: 0;
+      box-sizing: border-box;
+    }
+  }
+
+  body{
+    background: #F2F5FA!important;
+    overflow-x: hidden!important;
+    font-family: 'Montserrat';
+    font-weight: 200;
+  }
+  
+  .cta {
+    cursor: pointer;
+    text-decoration: none!important;
+    color: #fff!important;
+  }
+  .cta:visited {
+    color: #fff!important;
+  }
+
+  .container-fluid {
+    @include breakpoint($medium) {
+      max-width: 1440px!important;
+      padding-left: 5rem!important;
+      padding-right: 5rem!important;
+      left: 50%;
+      transform: translate(-50%);
+    }
+  }
+  .row {
+    @include breakpoint($medium) {
+      margin: 0 0 2rem 0;
+    }
+  }
+  .col-md-4, .col-md-3 {
+    padding: 0!important;
+  }
+  .icon-bar {
+    background: #fff!important;
+  }
+  .app-load {
+    position: relative;
+    width: 100%;
+  }
+  .hidden {
+    display: none!important;
+  }
+  a {
+    text-decoration: none!important;
+  }
+  .show__menu {
+    top: 0;
+  }
+  .hide__menu {
+    top: -2000px;
+  }
+  .container-fluid {
+    margin: 0 auto;
+  }
